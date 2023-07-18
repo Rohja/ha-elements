@@ -1,0 +1,33 @@
+{
+  "name": "ha-elements",
+  "version": "1.0.0",
+  "description": "Some LitElements used in my Home Assistant Custom Cards",
+  "source": "src/index.js",
+  "module": "dist/elements.js",
+  "targets": {
+    "module": {
+      "includeNodeModules": true
+    }
+  },
+  "scripts": {
+    "watch": "parcel watch",
+    "build": "rm -rf dist/* && parcel build"
+  },
+  "devDependencies": {
+    "parcel": "^2.8.3"
+  },
+  "dependencies": {
+    "@mdi/js": "^7.2.96",
+    "lit": "^2.7.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rohja/ha-elements.git"
+  },
+  "author": "Paul Rohja LESELLIER",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rohja/ha-elements/issues"
+  },
+  "homepage": "https://github.com/Rohja/ha-elements#readme"
+}
