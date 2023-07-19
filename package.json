@@ -2,8 +2,7 @@
   "name": "ha-elements",
   "version": "1.0.0",
   "description": "Some LitElements used in my Home Assistant Custom Cards",
-  "source": "src/index.js",
-  "module": "dist/elements.js",
+  "main": "src/index.js",
   "targets": {
     "module": {
       "includeNodeModules": true
