@@ -1,7 +1,2 @@
-import { ActionButton } from "./action-button";
-import { LongPressElement } from "./long-press-element";
-
-export default {
-  ActionButton,
-  LongPressElement,
-};
+export { ActionButton } from "./action-button";
+export { LongPressElement } from "./long-press-element";
