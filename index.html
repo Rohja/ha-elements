@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ha Elements by @Rohja</title>
+    <!-- <script type="module" src="/src/index.js"></script> -->
+    <script type="module">
+      import { ActionButton } from "./src/action-button.js";
+      import { mdiFan } from "@mdi/js";
+      customElements.define("action-button", ActionButton);
+      const actionButtonContainer = document.querySelector(
+        ".action-button-container"
+      );
+      console.log(actionButtonContainer);
+      const actionButton = document.createElement("action-button");
+      actionButton.setAttribute("button-icon", mdiFan);
+      actionButton.setAttribute("action1-icon", mdiFan);
+      actionButton.setAttribute("action1-fill", "red");
+      actionButton.setAttribute("action2-icon", mdiFan);
+      actionButton.setAttribute("action2-fill", "green");
+      actionButton.setAttribute("action3-icon", mdiFan);
+      actionButton.setAttribute("action3-fill", "blue");
+      actionButton.setAttribute("action4-icon", mdiFan);
+      actionButton.setAttribute("action4-fill", "yellow");
+      actionButtonContainer.innerHTML = actionButton.outerHTML;
+    </script>
+    <style>
+      .action-button-container {
+        width: 100px;
+        height: 100px;
+        color: white;
+        background-color: black;
+        position: relative;
+      }
+      :root {
+        --primary-color: light-blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>HELLO</h1>
+    <div class="action-button-container">Loading action-button element...</div>
+  </body>
+</html>

@@ -1,20 +1,18 @@
 {
   "name": "ha-elements",
-  "version": "1.0.0",
-  "description": "Some LitElements used in my Home Assistant Custom Cards",
-  "main": "src/index.js",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
   "dependencies": {
     "@mdi/js": "^7.2.96",
-    "lit": "^2.7.4"
+    "lit": "^2.7.5"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Rohja/ha-elements.git"
-  },
-  "author": "Paul Rohja LESELLIER",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Rohja/ha-elements/issues"
-  },
-  "homepage": "https://github.com/Rohja/ha-elements#readme"
+  "devDependencies": {
+    "vite": "^4.4.0"
+  }
 }
