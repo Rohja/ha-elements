@@ -3,18 +3,6 @@
   "version": "1.0.0",
   "description": "Some LitElements used in my Home Assistant Custom Cards",
   "main": "src/index.js",
-  "targets": {
-    "module": {
-      "includeNodeModules": true
-    }
-  },
-  "scripts": {
-    "watch": "parcel watch",
-    "build": "rm -rf dist/* && parcel build"
-  },
-  "devDependencies": {
-    "parcel": "^2.8.3"
-  },
   "dependencies": {
     "@mdi/js": "^7.2.96",
     "lit": "^2.7.4"
