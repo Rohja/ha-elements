@@ -6,6 +6,7 @@
     <title>Ha Elements by @Rohja</title>
     <!-- <script type="module" src="/src/index.js"></script> -->
     <script type="module">
+      // ActionButton Test
       import { ActionButton } from "./src/action-button.js";
       import { mdiFan } from "@mdi/js";
       customElements.define("action-button", ActionButton);
@@ -26,20 +27,26 @@
       actionButtonContainer.innerHTML = actionButton.outerHTML;
     </script>
     <style>
+      :root {
+        --primary-color: #03a9f4;
+        --primary-text-color: #e1e1e1;
+      }
+      body {
+        background-color: #1c1c1c;
+        color: var(--primary-text-color);
+      }
       .action-button-container {
         width: 20%;
         aspect-ratio: 1 / 1;
         color: white;
-        background-color: black;
         position: relative;
-      }
-      :root {
-        --primary-color: light-blue;
+        border: 1px solid red;
       }
     </style>
   </head>
   <body>
-    <h1>HELLO</h1>
+    <h1>ActionButton</h1>
     <div class="action-button-container">Loading action-button element...</div>
+    <hr />
   </body>
 </html>

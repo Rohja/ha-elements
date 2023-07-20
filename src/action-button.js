@@ -7,7 +7,7 @@ export class ActionIcon extends LitElement {
       hide: { type: Boolean, attribute: "hide" },
       scale: { type: Number, attribute: "scale" },
       backgroundColor: { type: String, attribute: "background-color" },
-      outline: { type: Boolean, attribute: "outline" },
+      outline: { type: String, attribute: "outline" },
       fill: { type: String, attribute: "fill" },
       mdiIcon: { type: String, attribute: "mdi-icon" },
       rotate: { type: Boolean, attribute: "rotate" },
@@ -21,8 +21,8 @@ export class ActionIcon extends LitElement {
     this.hide = false;
     this.scale = 60;
     this.backgroundColor = "var(--primary-color)";
-    this.outline = "0.2em solid white";
-    this.fill = "white";
+    this.outline = "0.2em solid var(--primary-text-color)";
+    this.fill = "var(--primary-text-color)";
     this.mdiIcon = mdiHelpRhombusOutline;
     this.rotate = false;
     this.rotateDuration = 2;
@@ -159,6 +159,12 @@ export class ActionButton extends LitElement {
       action2ViewBox: { type: String, attribute: "action2-viewbox" },
       action3ViewBox: { type: String, attribute: "action3-viewbox" },
       action4ViewBox: { type: String, attribute: "action4-viewbox" },
+      // Outline (String)
+      buttonOutline: { type: String, attribute: "button-outline" },
+      action1Outline: { type: String, attribute: "action1-outline" },
+      action2Outline: { type: String, attribute: "action2-outline" },
+      action3Outline: { type: String, attribute: "action3-outline" },
+      action4Outline: { type: String, attribute: "action4-outline" },
     };
   }
 
@@ -178,11 +184,11 @@ export class ActionButton extends LitElement {
     this.action3BackgroundColor = "var(--primary-color)";
     this.action4BackgroundColor = "var(--primary-color)";
     // Fill
-    this.buttonFill = "white";
-    this.action1Fill = "white";
-    this.action2Fill = "white";
-    this.action3Fill = "white";
-    this.action4Fill = "white";
+    this.buttonFill = "var(--primary-text-color)";
+    this.action1Fill = "var(--primary-text-color)";
+    this.action2Fill = "var(--primary-text-color)";
+    this.action3Fill = "var(--primary-text-color)";
+    this.action4Fill = "var(--primary-text-color)";
     // Rotate
     this.buttonRotate = false;
     this.action1Rotate = false;
@@ -201,6 +207,12 @@ export class ActionButton extends LitElement {
     this.action2ViewBox = "0 0 24 24";
     this.action3ViewBox = "0 0 24 24";
     this.action4ViewBox = "0 0 24 24";
+    // Outline
+    this.buttonOutline = "0.2em solid var(--primary-text-color)";
+    this.action1Outline = "0.2em solid var(--primary-text-color)";
+    this.action2Outline = "0.2em solid var(--primary-text-color)";
+    this.action3Outline = "0.2em solid var(--primary-text-color)";
+    this.action4Outline = "0.2em solid var(--primary-text-color)";
   }
 
   static styles = css`
@@ -287,6 +299,7 @@ export class ActionButton extends LitElement {
               ?rotate="${this.buttonRotate}"
               rotate-duration="${this.buttonRotateDuration}"
               viewbox="${this.buttonViewBox}"
+              outline="${this.buttonOutline}"
             ></action-icon
           ></slot>
         </long-press>
@@ -302,6 +315,7 @@ export class ActionButton extends LitElement {
                 ?rotate="${this.action1Rotate}"
                 rotate-duration="${this.action1RotateDuration}"
                 viewbox="${this.action1ViewBox}"
+                outline="${this.action1Outline}"
               ></action-icon>
             </div>
           </div>
@@ -316,6 +330,7 @@ export class ActionButton extends LitElement {
                 ?rotate="${this.action2Rotate}"
                 rotate-duration="${this.action2RotateDuration}"
                 viewbox="${this.action2ViewBox}"
+                outline="${this.action2Outline}"
               ></action-icon>
             </div>
           </div>
@@ -330,6 +345,7 @@ export class ActionButton extends LitElement {
                 ?rotate="${this.action3Rotate}"
                 rotate-duration="${this.action3RotateDuration}"
                 viewbox="${this.action3ViewBox}"
+                outline="${this.action3Outline}"
               ></action-icon>
             </div>
           </div>
@@ -344,6 +360,7 @@ export class ActionButton extends LitElement {
                 ?rotate="${this.action4Rotate}"
                 rotate-duration="${this.action4RotateDuration}"
                 viewbox="${this.action4ViewBox}"
+                outline="${this.action4Outline}"
               ></action-icon>
             </div>
           </div>
