@@ -57,28 +57,32 @@ export class ActionIcon extends LitElement {
         .container {
           display: ${this.hide ? "none" : "flex"};
         }
+
         .wrapper {
-          display: block;
+          position: relative;
           width: ${this.scale}%;
           height: ${this.scale}%;
-          position: relative;
         }
-        .wrapper::after {
-          content: "";
+
+        .background {
+          display: block;
+          width: 100%;
+          height: 100%;
           position: absolute;
           top: 0;
           left: 0;
           background-color: ${this.backgroundColor};
-          width: 100%;
-          height: 100%;
           border-radius: 50%;
           opacity: ${this.backgroundOpacity};
-          z-index: -1;
         }
 
         svg {
           width: 100%;
           height: 100%;
+
+          position: absolute;
+          top: 0;
+          left: 0;
 
           outline: ${this.outline};
           border-radius: 50%;
@@ -95,6 +99,7 @@ export class ActionIcon extends LitElement {
       </style>
       <div class="container">
         <div class="wrapper">
+          <div class="background"></div>
           <svg viewBox="${this.viewbox}" class="${this.rotate ? "rotate" : ""}">
             <path d="${this.mdiIcon}"></path>
           </svg>
