@@ -73,6 +73,7 @@ export class ActionIcon extends LitElement {
           height: 100%;
           border-radius: 50%;
           opacity: ${this.backgroundOpacity};
+          z-index: -1;
         }
 
         svg {
