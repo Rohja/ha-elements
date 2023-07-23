@@ -16,6 +16,8 @@
       console.log(actionButtonContainer);
       const actionButton = document.createElement("action-button");
       actionButton.setAttribute("button-icon", mdiFan);
+      actionButton.setAttribute("button-outline", "none");
+      actionButton.setAttribute("button-background-color", "transparent");
       actionButton.setAttribute("action1-icon", mdiFan);
       actionButton.setAttribute("action1-fill", "red");
       actionButton.setAttribute("action2-icon", mdiFan);
@@ -40,7 +42,7 @@
         aspect-ratio: 1 / 1;
         color: white;
         position: relative;
-        border: 1px solid red;
+        /* border: 1px solid red; */
       }
     </style>
   </head>

@@ -7,6 +7,7 @@ export class ActionIcon extends LitElement {
       hide: { type: Boolean, attribute: "hide" },
       scale: { type: Number, attribute: "scale" },
       backgroundColor: { type: String, attribute: "background-color" },
+      backgroundOpacity: { type: Number, attribute: "background-opacity" },
       outline: { type: String, attribute: "outline" },
       fill: { type: String, attribute: "fill" },
       mdiIcon: { type: String, attribute: "mdi-icon" },
@@ -21,6 +22,7 @@ export class ActionIcon extends LitElement {
     this.hide = false;
     this.scale = 60;
     this.backgroundColor = "var(--primary-color)";
+    this.backgroundOpacity = 1;
     this.outline = "0.2em solid var(--primary-text-color)";
     this.fill = "var(--primary-text-color)";
     this.mdiIcon = mdiHelpRhombusOutline;
@@ -55,12 +57,32 @@ export class ActionIcon extends LitElement {
         .container {
           display: ${this.hide ? "none" : "flex"};
         }
-        svg {
+        .wrapper {
+          display: block;
           width: ${this.scale}%;
           height: ${this.scale}%;
+          position: relative;
+        }
+        .wrapper::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
           background-color: ${this.backgroundColor};
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          opacity: ${this.backgroundOpacity};
+        }
+
+        svg {
+          width: 100%;
+          height: 100%;
+
           outline: ${this.outline};
           border-radius: 50%;
+
+          opacity: 1;
         }
         path {
           fill: ${this.fill};
@@ -71,9 +93,11 @@ export class ActionIcon extends LitElement {
         }
       </style>
       <div class="container">
-        <svg viewBox="${this.viewbox}" class="${this.rotate ? "rotate" : ""}">
-          <path d="${this.mdiIcon}"></path>
-        </svg>
+        <div class="wrapper">
+          <svg viewBox="${this.viewbox}" class="${this.rotate ? "rotate" : ""}">
+            <path d="${this.mdiIcon}"></path>
+          </svg>
+        </div>
       </div>
     `;
   }
@@ -119,6 +143,27 @@ export class ActionButton extends LitElement {
       action4BackgroundColor: {
         type: String,
         attribute: "action4-background-color",
+      },
+      // Background Opacity (Number)
+      buttonBackgroundOpacity: {
+        type: Number,
+        attribute: "button-background-opacity",
+      },
+      action1BackgroundOpacity: {
+        type: Number,
+        attribute: "action1-background-opacity",
+      },
+      action2BackgroundOpacity: {
+        type: Number,
+        attribute: "action2-background-opacity",
+      },
+      action3BackgroundOpacity: {
+        type: Number,
+        attribute: "action3-background-opacity",
+      },
+      action4BackgroundOpacity: {
+        type: Number,
+        attribute: "action4-background-opacity",
       },
       // Fill   (String)
       buttonFill: { type: String, attribute: "button-fill" },
@@ -183,6 +228,12 @@ export class ActionButton extends LitElement {
     this.action2BackgroundColor = "var(--primary-color)";
     this.action3BackgroundColor = "var(--primary-color)";
     this.action4BackgroundColor = "var(--primary-color)";
+    // Background Opacity
+    this.buttonBackgroundOpacity = 1;
+    this.action1BackgroundOpacity = 1;
+    this.action2BackgroundOpacity = 1;
+    this.action3BackgroundOpacity = 1;
+    this.action4BackgroundOpacity = 1;
     // Fill
     this.buttonFill = "var(--primary-text-color)";
     this.action1Fill = "var(--primary-text-color)";
@@ -295,6 +346,7 @@ export class ActionButton extends LitElement {
               class="main"
               mdi-icon="${this.buttonIcon}"
               background-color="${this.buttonBackgroundColor}"
+              background-opacity="${this.buttonBackgroundOpacity}"
               fill="${this.buttonFill}"
               ?rotate="${this.buttonRotate}"
               rotate-duration="${this.buttonRotateDuration}"
@@ -310,6 +362,7 @@ export class ActionButton extends LitElement {
                 ?hide="${this.action1Hide}"
                 mdi-icon="${this.action1Icon}"
                 background-color="${this.action1BackgroundColor}"
+                background-opacity="${this.action1BackgroundOpacity}"
                 fill="${this.action1Fill}"
                 scale="80"
                 ?rotate="${this.action1Rotate}"
@@ -325,6 +378,7 @@ export class ActionButton extends LitElement {
                 ?hide="${this.action2Hide}"
                 mdi-icon="${this.action2Icon}"
                 background-color="${this.action2BackgroundColor}"
+                background-opacity="${this.action2BackgroundOpacity}"
                 fill="${this.action2Fill}"
                 scale="80"
                 ?rotate="${this.action2Rotate}"
@@ -340,6 +394,7 @@ export class ActionButton extends LitElement {
                 ?hide="${this.action3Hide}"
                 mdi-icon="${this.action3Icon}"
                 background-color="${this.action3BackgroundColor}"
+                background-opacity="${this.action3BackgroundOpacity}"
                 fill="${this.action3Fill}"
                 scale="80"
                 ?rotate="${this.action3Rotate}"
@@ -355,6 +410,7 @@ export class ActionButton extends LitElement {
                 ?hide="${this.action4Hide}"
                 mdi-icon="${this.action4Icon}"
                 background-color="${this.action4BackgroundColor}"
+                background-opacity="${this.action4BackgroundOpacity}"
                 fill="${this.action4Fill}"
                 scale="80"
                 ?rotate="${this.action4Rotate}"
